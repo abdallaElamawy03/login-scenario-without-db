@@ -3,6 +3,7 @@ const express = require('express');
 const cookieparser = require('cookie-parser');
 const jwt = require('jsonwebtoken')
 const {check,validationResult} = require("express-validator")
+const cors = require("cors")
 
 // Configuring dotenv
 dotenv.config();
@@ -12,6 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieparser());
+app.use(cors())
 
 const userCredentials = {
     username: 'admin',
